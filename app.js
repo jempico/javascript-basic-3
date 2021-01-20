@@ -18,6 +18,8 @@ sayFullName(nombre, apellido);
 //NIVELL 3
 //Task 1
 
+//>Función recursiva (difiere ligeramente del encunciado, puesto que no es necesario crear una matriz de funciones);
+
 let count = (x,y) => {
     if (x<=y) {
         console.log(x);
