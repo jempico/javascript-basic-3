@@ -18,45 +18,51 @@ let sayFullName = (x, y) => console.log(`Mi nombre es ${x} ${y}`);
 
 sayFullName(nombre, apellido);
 
+
+
 //NIVELL 3
-//Task 1 (dos opciones, la primera respetando las directrices del enunciado, la segunda omitiendo la matriz de funciones)
+//TASK 1 
 
-    //Opción 1: Función recursiva con matriz de funciones:
+//OPTION 1: meeting the requirements of the task.
+    //While loop is being used throughout the script for being the simplest of the iteration structures.
 
-let print1 = function(){ console.log(1); print2()}
-let print2 = function(){ console.log(2); print3()}
-let print3 = function(){ console.log(3); print4()}
-let print4 = function(){ console.log(4); print5()}
-let print5 = function(){ console.log(5); print6()}
-let print6 = function(){ console.log(6); print7()}
-let print7 = function(){ console.log(7); print8()}
-let print8 = function(){ console.log(8); print9()}
-let print9 = function(){ console.log(9); print10()}
-let print10 = function(){ console.log(10);}
+let matrix = [];
 
-
-let array_of_functions = [print1, print2, print3, print4, print5, print6, print7, print8, print9, print10];
-
-array_of_functions[0]();
-
-
-    // Opción 2: Función recursiva sin matriz:
-
-
-let count = (x,y) => {
-    if (x<=y) {
-        console.log(x);
-        x++;
-        count(x,y);
-    }
-}
-  
-count(1,10);
-
-//Task 2
-
-let anonymous = function(x) {
-    console.log(x);
+// Creating 'count' function
+let count = () => {
+  let j=0;
+  while (j<10) {
+    console.log(j);
+  j++}
 }
 
-anonymous('NoName');
+// Pushing function to array
+let i=0;
+while (i<10) {
+  matrix.push(count);
+  count();
+  console.log(`End of count #${i}`)
+  i++;
+}
+
+
+// Option 2: Creating an inmediately invoked function that prints 0-9, 10 times.
+
+
+let fc = ((n1, n2) => { 
+    while (n1<n2) {
+      let j=0;
+      while (j<10) {
+      console.log(j);
+      j++} 
+      console.log(`End of count #${n1}`);
+    n1++;
+  }})(0, 10);
+
+
+//TASK 2
+
+let iife = (function (name) {
+    console.log(name);   
+  })('Inmediately Invoked Name');
+
